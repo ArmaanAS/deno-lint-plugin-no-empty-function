@@ -13,7 +13,7 @@ This rule flags any function declarations, function expressions, or arrow functi
 {
   "lint": {
     "plugins": [
-      "jsr:@armaanas/no-empty-function@0.1.3"
+      "jsr:@armaanas/no-empty-function@0.1.4"
     ]
   }
 }
@@ -46,9 +46,8 @@ const bar = function() {
   return "node".split("").sort().join("");
 };
 
-const baz = () => 42; // Arrow function with expression body
+const baz = () => 42;
 
-// Setters are allowed to be empty
 class Example {
   constructor() {
     this.foo = 3.14;
