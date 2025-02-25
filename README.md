@@ -26,7 +26,13 @@ function foo() {}
 
 const bar = function*() {};
 
-const baz = () => {}; 
+const baz = () => {};
+
+class Example {
+  constructor() {}
+
+  foo() {}
+}
 ```
 
 ## ✅ Valid Examples
