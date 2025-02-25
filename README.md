@@ -13,7 +13,7 @@ This rule flags any function declarations, function expressions, or arrow functi
 {
   "lint": {
     "plugins": [
-      "jsr:@armaanas/no-empty-function@0.1.0"
+      "jsr:@armaanas/no-empty-function@0.1.3"
     ]
   }
 }
