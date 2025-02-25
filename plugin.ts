@@ -1,3 +1,4 @@
+/** Deno lint plugin that disallows empty function bodies. */
 const plugin: Deno.lint.Plugin = {
   name: "my-empty-function-rule",
   rules: {
