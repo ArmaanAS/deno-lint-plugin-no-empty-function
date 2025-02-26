@@ -16,5 +16,7 @@ jobs:
       - uses: denoland/setup-deno@v2
         with:
           deno-version: v2.2
+      - name: Run tests
+        run: deno test *-test.ts
       - name: Publish package
         run: deno publish
