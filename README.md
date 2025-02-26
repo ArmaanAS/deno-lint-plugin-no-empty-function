@@ -12,9 +12,7 @@ This rule flags any function declarations, function expressions, or arrow functi
 // deno.json
 {
   "lint": {
-    "plugins": [
-      "jsr:@armaanas/no-empty-function@0.1.4"
-    ]
+    "plugins": ["jsr:@armaanas/no-empty-function@0.2.0"]
   }
 }
 ```
@@ -24,7 +22,7 @@ This rule flags any function declarations, function expressions, or arrow functi
 ```js
 function foo() {}
 
-const bar = function*() {};
+const bar = function* () {};
 
 const baz = () => {};
 
@@ -35,6 +33,15 @@ class Example {
 }
 ```
 
+```txt
+error[no-empty-function-rule/no-empty-function]: Empty function body
+ --> /home/user/deno/lint/example.ts:1:16
+  |
+1 | function foo() {}
+  |                ^^
+  = hint: Add code or comment to the empty function body
+```
+
 ## ✅ Valid Examples
 
 ```js
@@ -42,7 +49,7 @@ function foo() {
   return true;
 }
 
-const bar = function() {
+const bar = function () {
   return "node".split("").sort().join("");
 };
 
@@ -52,5 +59,9 @@ class Example {
   constructor() {
     this.foo = 3.14;
   }
+}
+
+function foo1() {
+  /* no-op */
 }
 ```

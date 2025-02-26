@@ -1,11 +1,9 @@
 {
   "lint": {
-    "plugins": [
-      "./plugin.ts"
-    ]
+    "plugins": ["./plugin.ts"]
   },
   "name": "@armaanas/no-empty-function",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "license": "MIT",
   "exports": "./plugin.ts"
 }
