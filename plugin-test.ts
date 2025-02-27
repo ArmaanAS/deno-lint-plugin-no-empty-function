@@ -25,6 +25,10 @@ Deno.test(
   () => testLint("function foo() {}", 1),
 );
 Deno.test(
+  "empty async function declaration",
+  () => testLint("async function foo() {}", 1),
+);
+Deno.test(
   "empty function expression",
   () => testLint("const bar = function() {};", 1),
 );
@@ -125,6 +129,10 @@ Deno.test(
 Deno.test(
   "function with block comment",
   () => testLint("function foo2() { /* Valid */ }", 0),
+);
+Deno.test(
+  "async function with block comment",
+  () => testLint("async function foo2() { /* Valid */ }", 0),
 );
 Deno.test(
   "function expression with block comment",

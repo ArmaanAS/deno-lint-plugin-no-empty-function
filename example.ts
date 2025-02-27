@@ -2,6 +2,8 @@
 
 function foo() {}
 
+async function fooAsync() {}
+
 const bar = function () {};
 
 const bar1 = () => {};
@@ -59,5 +61,9 @@ const foo3 = function () {/** Valid */};
 const foo4 = () => {/* Valid */};
 
 function foo5() {
+  // Valid
+}
+
+async function foo6() {
   // Valid
 }
