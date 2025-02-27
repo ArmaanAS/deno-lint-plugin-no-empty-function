@@ -146,6 +146,10 @@ Deno.test(
   "function with line comment",
   () => testLint("function foo5() { // Valid \n}", 0),
 );
+Deno.test(
+  "arrow function with no block",
+  () => testLint("const foo6 = () => 0;", 0),
+);
 
 // Complete class test
 Deno.test(

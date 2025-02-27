@@ -67,3 +67,5 @@ function foo5() {
 async function foo6() {
   // Valid
 }
+
+const foo7 = () => 0;
