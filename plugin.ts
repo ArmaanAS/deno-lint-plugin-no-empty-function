@@ -13,15 +13,7 @@ const plugin: Deno.lint.Plugin = {
           return text.includes("/*") || text.includes("//");
         }
         return {
-          "FunctionDeclaration > BlockStatement[body.length=0]"(node) {
-            if (containsComment(node)) return;
-            context.report({
-              node,
-              message: "Empty function body",
-              hint: "Add code or comment to the empty function body",
-            });
-          },
-          ":not(MethodDefinition[kind='get'], MethodDefinition[kind='set'], Property[kind='get'], Property[kind='set']) > FunctionExpression > BlockStatement[body.length=0]"(
+          "FunctionDeclaration > BlockStatement[body.length=0], :not(MethodDefinition[kind='get'], MethodDefinition[kind='set'], Property[kind='get'], Property[kind='set']) > FunctionExpression > BlockStatement[body.length=0], ArrowFunctionExpression > BlockStatement[body.length=0]"(
             node,
           ) {
             if (containsComment(node)) return;
@@ -29,14 +21,6 @@ const plugin: Deno.lint.Plugin = {
               node,
               message: "Empty function body",
               hint: "Add code or comment to the empty function body",
-            });
-          },
-          "ArrowFunctionExpression > BlockStatement[body.length=0]"(node) {
-            if (containsComment(node)) return;
-            context.report({
-              node,
-              message: "Empty arrow function body",
-              hint: "Add code or comment to the empty arrow function body",
             });
           },
         };
