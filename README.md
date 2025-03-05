@@ -12,7 +12,7 @@ This rule flags any function declarations, function expressions, or arrow functi
 // deno.json
 {
   "lint": {
-    "plugins": ["jsr:@armaanas/no-empty-function@0.2.1"]
+    "plugins": ["jsr:@armaanas/no-empty-function@0.3.0"]
   }
 }
 ```

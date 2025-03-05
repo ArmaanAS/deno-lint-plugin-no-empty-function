@@ -3,7 +3,7 @@
     "plugins": ["./plugin.ts"]
   },
   "name": "@armaanas/no-empty-function",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "license": "MIT",
   "exports": "./plugin.ts"
 }

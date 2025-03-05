@@ -10,7 +10,7 @@ const plugin: Deno.lint.Plugin = {
           return text.includes("/*") || text.includes("//");
         }
         return {
-          ":not([kind=get], [kind=set]) > :not(:not(FunctionDeclaration, FunctionExpression, ArrowFunctionExpression)) > BlockStatement[body.length=0]"(
+          ":not([kind=get], [kind=set]) > :is(FunctionDeclaration, FunctionExpression, ArrowFunctionExpression) > BlockStatement[body.length=0]"(
             node,
           ) {
             if (containsComment(node)) return;
